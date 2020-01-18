@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Typer.module.sass';
+import axios from 'axios'
 import Input from "./Input/Input";
 import Interspector from "./Interspector/Interspector";
 
@@ -7,19 +8,28 @@ class Typer extends Component{
 
     state={
         inputString:"",
-        outString: "hello world",
-        nextCharIndex:0,
+        outString: "",
+        wordsCount: 1,
     };
 
+    componentDidMount() {
+        this.getData();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(!this.state.outString){
+            this.getData();
+        }
+    }
+
     compareSymbol(evalSymbol){
-        if(evalSymbol === this.state.outString[this.state.nextCharIndex]){
-            this.setState({
-                nextCharIndex: this.state.nextCharIndex + 1,
-                inputString:this.state.inputString + evalSymbol,
-            });
-            return true;
-        }else{
-            return false;
+        if(this.state.outString){
+            if(evalSymbol === this.state.outString[0]){
+                this.setState({
+                    inputString:this.state.inputString + evalSymbol,
+                    outString:this.state.outString.slice(1,this.state.outString.length)
+                });
+            }
         }
     }
 
@@ -27,6 +37,20 @@ class Typer extends Component{
         let evalString = input.target.value;
         let evalSymbol = evalString.charAt(evalString.length - 1);
         console.log(this.compareSymbol(evalSymbol));
+    }
+
+    getData(){
+        axios.get('https://random-word-api.herokuapp.com/word?key=ZWDECO3G&number='+this.state.wordsCount)
+            .then(response=>{
+                this.setData(response.data);
+            })
+    }
+
+    setData(data){
+        this.setState({
+            inputString:"",
+            outString: data.join(' '),
+        })
     }
 
     render() {
