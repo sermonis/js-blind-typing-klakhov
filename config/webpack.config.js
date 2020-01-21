@@ -402,7 +402,7 @@ module.exports = function(webpackEnv) {
               exclude: /@babel(?:\/|\\{1,2})runtime/,
               loader: require.resolve('babel-loader'),
               options: {
-                babelrc: false,
+                babelrc: true,
                 configFile: false,
                 compact: false,
                 presets: [
@@ -410,6 +410,9 @@ module.exports = function(webpackEnv) {
                     require.resolve('babel-preset-react-app/dependencies'),
                     { helpers: true },
                   ],
+                ],
+                plugins:[
+                  "@babel/plugin-proposal-class-properties"
                 ],
                 cacheDirectory: true,
                 // See #6846 for context on why cacheCompression is disabled

@@ -38,10 +38,18 @@ class Interspector extends Component{
 
     render(){
         return (
-            <div>
-                <div className={styles.right}>{this.props.inputString}</div>
-                <div className={this.state.dividerClasses.join(' ')} id="divider"/>
-                <div className={styles.wrong}>{this.props.outString}</div>
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className={styles.frame + " col-auto"}>
+                        <div className="container">
+                            <div className="row justify-content-center">
+                                <div className={styles.right}>{this.props.inputString}</div>
+                                <div className={this.state.dividerClasses.join(' ')} id="divider"/>
+                                <div className={styles.wrong}>{this.props.outString}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

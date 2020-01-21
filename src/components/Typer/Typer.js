@@ -3,13 +3,21 @@ import styles from './Typer.module.sass';
 import axios from 'axios'
 import Input from "./Input/Input";
 import Interspector from "./Interspector/Interspector";
+import Statistics from "./Statistics/Statistics";
 
 class Typer extends Component{
 
     state={
         inputString:"",
         outString: "",
-        wordsCount: 1,
+        wordsCount: 10,
+
+        secondCheck: false,
+        statistics:{
+            errors:0,
+            right:0,
+            wrong:0,
+        }
     };
 
     componentDidMount() {
@@ -27,8 +35,22 @@ class Typer extends Component{
             if(evalSymbol === this.state.outString[0]){
                 this.setState({
                     inputString:this.state.inputString + evalSymbol,
-                    outString:this.state.outString.slice(1,this.state.outString.length)
+                    outString:this.state.outString.slice(1,this.state.outString.length),
+                    secondCheck: false,
+                    statistics:{
+                        ...this.state.statistics,
+                        right:  !this.state.secondCheck ? this.state.statistics.right+1 : this.state.statistics.right
+                    }
                 });
+            }else{
+                this.setState({
+                    secondCheck: this.state.secondCheck ? this.state.secondCheck : true,
+                    statistics:{
+                        ...this.state.statistics,
+                        errors: this.state.statistics.errors + 1,
+                        wrong: this.state.secondCheck ? this.state.statistics.wrong : this.state.statistics.wrong +1,
+                    }
+                })
             }
         }
     }
@@ -55,10 +77,15 @@ class Typer extends Component{
 
     render() {
         return (
-            <div>
-              <Input onSymbolInput={this.onSymbolInput.bind(this)}/>
-              <Interspector inputString={this.state.inputString}
-                            outString={this.state.outString}/>
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-auto">
+                        <Input onSymbolInput={this.onSymbolInput.bind(this)}/>
+                        <Statistics statistics={this.state.statistics}/>
+                        <Interspector inputString={this.state.inputString}
+                                      outString={this.state.outString}/>
+                    </div>
+                </div>
             </div>
         );
     }

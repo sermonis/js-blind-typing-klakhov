@@ -1,20 +1,36 @@
+$my-dark: #2A373E
+$my-yellow: #FFC248
+$unobtained: rgb(128,128,128)
+$my-silver: rgb(178,204,214)
+
 .right
-  color: green
+  color: $my-yellow
   display: inline-block
   white-space: pre
 
 .wrong
-  color: red
+  color: $unobtained
   display: inline-block
   white-space: pre
+
 .divider
-  color: black
-  width: 1.5px
-  height: 20px
+  color: $my-yellow
+  width: 1px
+  margin-top: 3px
+  height: 28px
   display: inline-block
 
 .divider_on
-  background-color: black
-.divider_off
-  background-color: white
+  background-color: $my-yellow
 
+.divider_off
+  background-color: $my-dark
+
+.frame
+  background-color: $my-dark
+  width: 1000px
+  padding: 12px
+  font-size: 20px
+  border-radius: 10px
+  border: 2px solid  $my-yellow
+  min-width: 1000px

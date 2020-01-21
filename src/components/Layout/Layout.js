@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import styles from './layout.module.sass';
 import Typer from "../Typer/Typer";
+import Header from "../Header/Header";
+import Route from "react-router-dom/modules/BrowserRouter";
 class Layout extends Component {
     componentDidMount() {
         let folder = document.getElementById('folder');
@@ -15,7 +17,7 @@ class Layout extends Component {
     render() {
         return (
             <div className={styles.app} onClick={this.setFocus}>
-                <Typer/>
+                <Header/>
             </div>
         );
     }
