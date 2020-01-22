@@ -1,5 +1,11 @@
-$my-silver: rgb(178,204,214)
-
+@import "src/variables"
 .text
-  color: $my-silver
-  font-size: 18px
+  font-size: 22px
+
+.left
+  @extend .text
+  color: $p-darkblue
+
+.right
+  @extend .text
+  color: white

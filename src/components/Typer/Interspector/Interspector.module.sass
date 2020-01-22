@@ -1,36 +1,32 @@
-$my-dark: #2A373E
-$my-yellow: #FFC248
-$unobtained: rgb(128,128,128)
-$my-silver: rgb(178,204,214)
-
-.right
-  color: $my-yellow
+@import "src/variables"
+.wait
+  color: $p-darkblue
   display: inline-block
   white-space: pre
 
-.wrong
-  color: $unobtained
+.done
+  color: $p-silver
   display: inline-block
   white-space: pre
 
 .divider
-  color: $my-yellow
   width: 1px
   margin-top: 3px
   height: 28px
   display: inline-block
 
 .divider_on
-  background-color: $my-yellow
+  background-color: $p-blue
 
 .divider_off
-  background-color: $my-dark
+  background-color: white
 
 .frame
-  background-color: $my-dark
+  background-color: white
   width: 1000px
   padding: 12px
-  font-size: 20px
-  border-radius: 10px
-  border: 2px solid  $my-yellow
+  font-size: 22px
+  border-radius: 25px
+  border: 2px solid  $p-blue
   min-width: 1000px
+  box-shadow: 0px 20px 30px 0px rgba(6, 36, 111, 0.90)

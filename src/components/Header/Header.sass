@@ -1,0 +1,27 @@
+@import "src/variables"
+.h-body
+  height: 60px
+
+.h-b
+  color: white
+  height: 40px
+  min-width: 80px
+  padding: 9px 20px
+  font-size: 19px
+  &:hover
+    text-decoration: none
+    color: white
+    border-bottom: 1px solid white
+
+
+.h-a-b
+  @extend .h-b
+  border-radius: 20px
+  transition: .3s ease-in-out
+  color: $p-blue
+  background-color: white
+  &:hover
+    color: white
+    background-color: $p-blue
+    border-bottom: none
+    transition: .3s ease-in-out

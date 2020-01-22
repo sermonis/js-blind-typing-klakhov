@@ -4,7 +4,6 @@ import axios from 'axios'
 import Input from "./Input/Input";
 import Interspector from "./Interspector/Interspector";
 import Statistics from "./Statistics/Statistics";
-
 class Typer extends Component{
 
     state={
@@ -21,6 +20,8 @@ class Typer extends Component{
     };
 
     componentDidMount() {
+        let folder = document.getElementById('folder');
+        folder.focus();
         this.getData();
     }
 
@@ -62,22 +63,27 @@ class Typer extends Component{
     }
 
     getData(){
-        axios.get('https://random-word-api.herokuapp.com/word?key=ZWDECO3G&number='+this.state.wordsCount)
+        axios.get('https://random-word-api.herokuapp.com/word?key=3P468F7E&number='+this.state.wordsCount)
             .then(response=>{
                 this.setData(response.data);
             })
     }
 
+    setFocus(){
+        let folder = document.getElementById('folder');
+        folder.focus();
+    }
+
     setData(data){
         this.setState({
             inputString:"",
-            outString: data.join(' '),
+            // outString: data.join(' '),
         })
     }
 
     render() {
         return (
-            <div className="container">
+            <div className={styles.typerContainer+" container"} onClick={this.setFocus}>
                 <div className="row justify-content-center">
                     <div className="col-auto">
                         <Input onSymbolInput={this.onSymbolInput.bind(this)}/>

@@ -8,11 +8,11 @@ const statistics = (props) =>{
     };
     return (
         <div className="container">
-            <div className="row justify-content-center mt-4 mb-3">
-                <div className={styles.text + " col-auto mr-5"}>
+            <div className="row justify-content-around mt-4 mb-3">
+                <div className={styles.left + " col-auto mr-5"}>
                     {data.errors} errors
                 </div>
-                <div className={styles.text + " col-auto ml-5"}>
+                <div className={styles.right +" col-auto ml-5"}>
                     {data.correctRate ? data.correctRate : '0'}% correct rate
                 </div>
             </div>
