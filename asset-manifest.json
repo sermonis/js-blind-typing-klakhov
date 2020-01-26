@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/blind-typer/static/css/main.0ba0e49e.chunk.css",
-    "main.js": "/blind-typer/static/js/main.040bc9d3.chunk.js",
-    "main.js.map": "/blind-typer/static/js/main.040bc9d3.chunk.js.map",
+    "main.js": "/blind-typer/static/js/main.d8518b58.chunk.js",
+    "main.js.map": "/blind-typer/static/js/main.d8518b58.chunk.js.map",
     "runtime-main.js": "/blind-typer/static/js/runtime-main.40b79e56.js",
     "runtime-main.js.map": "/blind-typer/static/js/runtime-main.40b79e56.js.map",
-    "static/js/2.f67800fc.chunk.js": "/blind-typer/static/js/2.f67800fc.chunk.js",
-    "static/js/2.f67800fc.chunk.js.map": "/blind-typer/static/js/2.f67800fc.chunk.js.map",
+    "static/js/2.77325ba7.chunk.js": "/blind-typer/static/js/2.77325ba7.chunk.js",
+    "static/js/2.77325ba7.chunk.js.map": "/blind-typer/static/js/2.77325ba7.chunk.js.map",
     "index.html": "/blind-typer/index.html",
-    "precache-manifest.8e3a96e60c04048748fbcef92805ff34.js": "/blind-typer/precache-manifest.8e3a96e60c04048748fbcef92805ff34.js",
+    "precache-manifest.a70684d94ceca48d9039d18a443bec87.js": "/blind-typer/precache-manifest.a70684d94ceca48d9039d18a443bec87.js",
     "service-worker.js": "/blind-typer/service-worker.js",
     "static/css/main.0ba0e49e.chunk.css.map": "/blind-typer/static/css/main.0ba0e49e.chunk.css.map",
-    "static/js/2.f67800fc.chunk.js.LICENSE": "/blind-typer/static/js/2.f67800fc.chunk.js.LICENSE",
+    "static/js/2.77325ba7.chunk.js.LICENSE": "/blind-typer/static/js/2.77325ba7.chunk.js.LICENSE",
     "static/media/fone.png": "/blind-typer/static/media/fone.41234078.png"
   },
   "entrypoints": [
     "static/js/runtime-main.40b79e56.js",
-    "static/js/2.f67800fc.chunk.js",
+    "static/js/2.77325ba7.chunk.js",
     "static/css/main.0ba0e49e.chunk.css",
-    "static/js/main.040bc9d3.chunk.js"
+    "static/js/main.d8518b58.chunk.js"
   ]
 }

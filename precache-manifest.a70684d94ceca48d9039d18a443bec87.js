@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fcd63bf470856590026ceb42164fb901",
+    "revision": "97a04ab0df519c35ed552e88de18e62b",
     "url": "/blind-typer/index.html"
   },
   {
-    "revision": "ebb57c5212482f2e8eba",
+    "revision": "c8f7064a3d297e39e5b6",
     "url": "/blind-typer/static/css/main.0ba0e49e.chunk.css"
   },
   {
-    "revision": "24befa719d4bae56a06d",
-    "url": "/blind-typer/static/js/2.f67800fc.chunk.js"
+    "revision": "da2d47ebe4a97ecc2c16",
+    "url": "/blind-typer/static/js/2.77325ba7.chunk.js"
   },
   {
     "revision": "f73e810844fba009bd106bf78cf93a52",
-    "url": "/blind-typer/static/js/2.f67800fc.chunk.js.LICENSE"
+    "url": "/blind-typer/static/js/2.77325ba7.chunk.js.LICENSE"
   },
   {
-    "revision": "ebb57c5212482f2e8eba",
-    "url": "/blind-typer/static/js/main.040bc9d3.chunk.js"
+    "revision": "c8f7064a3d297e39e5b6",
+    "url": "/blind-typer/static/js/main.d8518b58.chunk.js"
   },
   {
     "revision": "dd79b8f07536b57756e9",
