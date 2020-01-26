@@ -11,8 +11,8 @@ class Layout extends Component {
         return (
             <div className={styles.app} style={{backgroundImage: `url(${bcImg})`}}>
                 <Header/>
-                <Route path='/' exact component={Typer}/>
-                <Route path='/about' exact component={About}/>
+                <Route path='/blind-typer' exact component={Typer}/>
+                <Route path='/blind-typer/about' exact component={About}/>
             </div>
         );
     }

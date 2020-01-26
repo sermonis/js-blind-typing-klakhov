@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './Typer.module.sass';
-import axios from 'axios'
+import * as firebase from "firebase/app";
+import "firebase/firestore";
 import Input from "./Input/Input";
 import Interspector from "./Interspector/Interspector";
 import Statistics from "./Statistics/Statistics";
@@ -9,14 +10,15 @@ class Typer extends Component{
     state={
         inputString:"",
         outString: "",
-        wordsCount: 10,
-
+        wordsCount: 8,
+        libraryLength: 17000,
         secondCheck: false,
         statistics:{
             errors:0,
             right:0,
             wrong:0,
-        }
+        },
+        loading: false,
     };
 
     componentDidMount() {
@@ -26,8 +28,10 @@ class Typer extends Component{
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(!this.state.outString){
-            this.getData();
+        if(!this.state.loading && !prevState.loading){
+            if(!this.state.outString){
+                this.getData();
+            }
         }
     }
 
@@ -59,14 +63,32 @@ class Typer extends Component{
     onSymbolInput(input){
         let evalString = input.target.value;
         let evalSymbol = evalString.charAt(evalString.length - 1);
-        console.log(this.compareSymbol(evalSymbol));
+        this.compareSymbol(evalSymbol);
     }
 
-    getData(){
-        axios.get('https://random-word-api.herokuapp.com/word?key=3P468F7E&number='+this.state.wordsCount)
-            .then(response=>{
-                this.setData(response.data);
-            })
+    async getData(){
+        this.syncFirebaseApp();
+        let db = firebase.firestore();
+        let words = db.collection('words');
+        let wordsToShow = [];
+        this.setLoading(true);
+        for(let i=0; i<this.state.wordsCount; i++){
+            let index = Math.floor(-0.5 + Math.random()*(this.state.libraryLength + 1));
+            await words.doc(index.toString()).get().then(doc=>{
+                wordsToShow.push(doc.data().name);
+            });
+        }
+        this.setLoading(false);
+        this.setData(wordsToShow);
+    }
+
+    setLoading(loading){
+        this.setState({
+            statistics:{
+                ...this.state.statistics,
+            },
+            loading: loading,
+        });
     }
 
     setFocus(){
@@ -77,19 +99,30 @@ class Typer extends Component{
     setData(data){
         this.setState({
             inputString:"",
-            // outString: data.join(' '),
+            outString: data.join(' '),
         })
+    }
+
+    syncFirebaseApp(){
+        try{
+            firebase.initializeApp({
+                apiKey: 'AIzaSyDH7MRNLgPWkefxHmQbQmEhPK1fGuahXBo',
+                authDomain: 'eur3',
+                projectId: 'touch-typer-841ef'
+            });
+        }catch (e) {}
     }
 
     render() {
         return (
-            <div className={styles.typerContainer+" container"} onClick={this.setFocus}>
+            <div className={styles.typer+" container"} onClick={this.setFocus}>
                 <div className="row justify-content-center">
                     <div className="col-auto">
                         <Input onSymbolInput={this.onSymbolInput.bind(this)}/>
                         <Statistics statistics={this.state.statistics}/>
                         <Interspector inputString={this.state.inputString}
-                                      outString={this.state.outString}/>
+                                      outString={this.state.outString}
+                                      loading={this.state.loading}/>
                     </div>
                 </div>
             </div>

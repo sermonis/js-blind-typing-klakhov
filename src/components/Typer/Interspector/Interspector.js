@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Interspector.module.sass';
+import Loader from "../Loader/Loader";
 
 class Interspector extends Component{
     state = {
@@ -43,9 +44,10 @@ class Interspector extends Component{
                     <div className={styles.frame + " col-auto"}>
                         <div className="container">
                             <div className="row justify-content-center">
-                                <div className={styles.done}>{this.props.inputString}</div>
-                                <div className={this.state.dividerClasses.join(' ')} id="divider"/>
-                                <div className={styles.wait}>{this.props.outString}</div>
+                                {this.props.loading ? <Loader/> : null}
+                                {!this.props.loading ?  <div className={styles.done}>{this.props.inputString}</div> : null}
+                                {!this.props.loading ?  <div className={this.state.dividerClasses.join(' ')} id="divider"/> : null}
+                                {!this.props.loading ?  <div className={styles.wait}>{this.props.outString}</div> : null}
                             </div>
                         </div>
                     </div>
