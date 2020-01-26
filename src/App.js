@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "@babel/polyfill";
 import Layout from "./components/Layout/Layout";
 function App() {
   return (
