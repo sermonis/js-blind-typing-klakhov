@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/blind-typer/static/css/main.0ba0e49e.chunk.css",
+    "main.js": "/blind-typer/static/js/main.663941ec.chunk.js",
+    "main.js.map": "/blind-typer/static/js/main.663941ec.chunk.js.map",
+    "runtime-main.js": "/blind-typer/static/js/runtime-main.40b79e56.js",
+    "runtime-main.js.map": "/blind-typer/static/js/runtime-main.40b79e56.js.map",
+    "static/js/2.f67800fc.chunk.js": "/blind-typer/static/js/2.f67800fc.chunk.js",
+    "static/js/2.f67800fc.chunk.js.map": "/blind-typer/static/js/2.f67800fc.chunk.js.map",
+    "index.html": "/blind-typer/index.html",
+    "precache-manifest.ab5045bb50de2d0ee400bf4c6350f543.js": "/blind-typer/precache-manifest.ab5045bb50de2d0ee400bf4c6350f543.js",
+    "service-worker.js": "/blind-typer/service-worker.js",
+    "static/css/main.0ba0e49e.chunk.css.map": "/blind-typer/static/css/main.0ba0e49e.chunk.css.map",
+    "static/js/2.f67800fc.chunk.js.LICENSE": "/blind-typer/static/js/2.f67800fc.chunk.js.LICENSE",
+    "static/media/fone.png": "/blind-typer/static/media/fone.41234078.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.40b79e56.js",
+    "static/js/2.f67800fc.chunk.js",
+    "static/css/main.0ba0e49e.chunk.css",
+    "static/js/main.663941ec.chunk.js"
+  ]
+}
