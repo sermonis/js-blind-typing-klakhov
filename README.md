@@ -5,4 +5,4 @@ Main feature is changing words
 
 Supported by Firebase
 
-## Can be found here https://s11as.github.io/blind-typer/
+## Can be found here https://klakhov.github.io/blind-typer/
